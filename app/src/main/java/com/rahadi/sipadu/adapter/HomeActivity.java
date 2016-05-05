@@ -30,7 +30,11 @@ import com.rahadi.sipadu.R;
 import com.rahadi.sipadu.gettersetter.BeritaOverviewGetsetter;
 import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -38,7 +42,8 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
     String[][] konten_jadwal = new String[][] {
             {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
-            {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"}
+            {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"},
+            {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
     };
     String[][] konten_berita = new String[][] {
             {"Kan bisa diatur di settings hehew", "29/04/2016", "Komnet Dev Team"},
@@ -63,8 +68,6 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        final int tinggi = getStatusBarHeight();
-
         if(toolbar.getOverflowIcon() != null) {
             toolbar.getOverflowIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
         }
@@ -80,31 +83,9 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         parallaxHeight = getResources().getDimensionPixelSize(R.dimen.parallax_item);
 
-//        TextView nama = (TextView)findViewById(R.id.username_home);
-//        TextView kelas = (TextView)findViewById(R.id.class_home);
-
-//        actionBar.setDisplayShowCustomEnabled(true);
-//        View v = getLayoutInflater().inflate(R.layout.namadannim, null);
-//        actionBar.setCustomView(v);
-
-//        if (actionBar != null) {
-//            actionBar.setTitle(getResources().getString(R.string.nama_lengkap));
-//        }
-//        actionBar.setTitle(nama.getText().toString().toUpperCase());
-//        actionBar.setSubtitle(kelas.getText().toString().toUpperCase());
-
-//        actionBar.setDisplayShowTitleEnabled(false);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
-
-//        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapser);
-//        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.transparent));
-////        collapsingToolbarLayout.setTitle(getResources().getString(R.string.nama_lengkap));
-//        collapsingToolbarLayout.setContentScrimColor(getResources().getColor(R.color.colorPrimary));
-//        collapsingToolbarLayout.setExpandedTitleGravity(Gravity.START | Gravity.BOTTOM);
-//        collapsingToolbarLayout.setScrimsShown(true, true);
 
         Button[] buttons = new Button[4];
         buttons[0] = (Button)findViewById(R.id.button_absen);
@@ -116,6 +97,8 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
             setButtonBackgroundColor(button);
         }
 
+        TextView tanggaljadwal = (TextView)findViewById(R.id.tanggal_jadwal);
+        tanggaljadwal.setText(getToday("JADWAL_OVERVIEW"));
         jadwal_overview = (ListView)findViewById(R.id.list_jadwal_overview);
         jadwal_overview_array = new ArrayList<>();
 
@@ -158,12 +141,6 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         CircleImageView circleImageView = (CircleImageView)findViewById(R.id.detail_userpic);
         circleImageView.setImageResource(R.drawable.ic_user);
-
-//        View linearLayout = findViewById(R.id.user_detail);
-//        linearLayout.setPadding(0, tinggi, 0, 0);
-
-//        String nama_app = getString(R.string.nama_lengkap).toUpperCase();
-//        actionBar.setTitle(nama_app);
 
     }
 
@@ -323,5 +300,62 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         onScrollChanged(mScrollView.getCurrentScrollY(), false, false);
+    }
+
+    public String getToday(String usage) {
+        String day, month, tanggal;
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+
+        if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+            day = "Senin";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+            day = "Selasa";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
+            day = "Rabu";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
+            day = "Kamis";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
+            day = "Jumat";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
+            day = "Sabtu";
+        } else if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+            day = "Minggu";
+        } else {
+            day = "";
+        }
+
+        if(calendar.get(Calendar.MONTH) == Calendar.JANUARY) {
+            month = "Januari";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.FEBRUARY) {
+            month = "Februari";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.MARCH) {
+            month = "Maret";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.APRIL) {
+            month = "April";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.MAY) {
+            month = "Mei";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.JUNE) {
+            month = "Juni";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.JULY) {
+            month = "Juli";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.AUGUST) {
+            month = "Agustus";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.SEPTEMBER) {
+            month = "September";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
+            month = "Oktober";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.NOVEMBER) {
+            month = "November";
+        } else if(calendar.get(Calendar.MONTH) == Calendar.DECEMBER) {
+            month = "Desember";
+        } else {
+            month = "";
+        }
+        if(usage.equals("JADWAL_OVERVIEW")) {
+            tanggal = day + ", " + calendar.get(Calendar.DAY_OF_WEEK) + " " + month + " " + calendar.get(Calendar.YEAR);
+            return tanggal;
+        }
+        return "";
     }
 }
