@@ -25,10 +25,15 @@
             android:name=".adapter.SplashScreen"
             android:label="@string/title_activity_splashscreen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".adapter.BeritaActivity"
+        <activity
+            android:name=".adapter.BeritaActivity"
             android:label="@string/title_activity_berita"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".adapter.BeritaDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".adapter.BeritaDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".adapter.NilaiActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

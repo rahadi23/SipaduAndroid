@@ -92,10 +92,24 @@ public class StringContainer {
 
     };
 
-    public static String[][] konten_jadwal = new String[][] {
-            {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
-            {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"},
-            {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
+    public static String[][][] konten_jadwal = new String[][][] {
+            {
+                    {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
+            },
+            {
+                    {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"},
+                    {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
+            },
+            {
+                    {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
+                    {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
+            },
+            {
+                    {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
+                    {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"},
+                    {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
+            },
+            {}
     };
 
     public static String[][] konten_berita_tanpa_isi = new String[][] {
@@ -106,5 +120,22 @@ public class StringContainer {
             {"Welcome to the new Sipadu!", "11/04/2016", "Komnet Dev Team"},
             {"Kuliah Pertama", "23/03/2016", "Said Mirza Pahlevi"},
             {"Her Statmat", "13/03/2016", "BAAK"}
+    };
+
+    public static String[][] konten_nilai_aktif = new String[][] {
+            {"Metode Statistik II","Dosen Metstat","B-"},
+            {"Struktur Data","Dosen Strukdat","A-"},
+            {"Statistika Matematika","Dosen Statmat","A+"},
+            {"Basis Data","Dosen Basdat","B+"},
+            {"Pendidikan Kewarganegaraan","Dosen PKN","A-"},
+            {"Matematika Diskrit","Dosen Matdis","A"}
+    };
+    public static String[][] konten_nilai_history = new String[][] {
+            {"Metode Statistik II","Dosen Metstat","B"},
+            {"Struktur Data","Dosen Strukdat","A-"},
+            {"Statistika Matematika","Dosen Statmat","A+"},
+            {"Basis Data","Dosen Basdat","B+"},
+            {"Pendidikan Kewarganegaraan","Dosen PKN","A-"},
+            {"Matematika Diskrit","Dosen Matdis","A"}
     };
 }

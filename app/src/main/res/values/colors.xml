@@ -5,4 +5,8 @@
     <color name="colorPrimaryDark">#0060bf</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="ColorSecondary">#4D4D4D</color>
+    <color name="switchInactive">#500080FF</color>
+    <color name="tabIndicator">#FFFFFF</color>
 </resources>

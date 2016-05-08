@@ -16,12 +16,12 @@ import java.util.ArrayList;
 /**
  * Created by Rahadi on 10/04/2016.
  */
-public class JadwalOverview extends BaseAdapter {
+public class Jadwal extends BaseAdapter {
 
     Activity activity;
     ArrayList<JadwalOverviewGetsetter> listItem;
 
-    public JadwalOverview(Activity activity, ArrayList<JadwalOverviewGetsetter> listItem){
+    public Jadwal(Activity activity, ArrayList<JadwalOverviewGetsetter> listItem){
         this.activity = activity;
         this.listItem = listItem;
     }

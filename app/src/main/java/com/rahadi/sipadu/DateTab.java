@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.rahadi.sipadu.adapter.StringContainer;
 import com.rahadi.sipadu.gettersetter.DateTabGetsetter;
+import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,13 +25,7 @@ public class DateTab extends LinearLayout {
 
     Calendar c;
     DateTabGetsetter[] konten;
-    int[][] jadwal = new int[][]{
-            {2,3},
-            {1},
-            {},
-            {1,2,3},
-            {3}
-    };
+    int[][] jadwal;
 
     public DateTab(Context context) {
         this(context, null);
@@ -40,6 +36,13 @@ public class DateTab extends LinearLayout {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.datetab, this, true);
+
+        jadwal = new int[5][4];
+        for (int i = 0; i < StringContainer.konten_jadwal.length; i++) {
+            for (int j = 0; j < StringContainer.konten_jadwal[i].length; j++) {
+                jadwal[i][j] = Integer.parseInt(StringContainer.konten_jadwal[i][j][0]);
+            }
+        }
 
         TextView[] t = new TextView[5];
         t[0] = (TextView)findViewById(R.id.tanggal_1);

@@ -88,17 +88,31 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         JadwalOverviewGetsetter jadwal = null;
 
-        for (String[] aKonten_jadwal : StringContainer.konten_jadwal) {
-            jadwal = new JadwalOverviewGetsetter();
-            jadwal.setSesi(aKonten_jadwal[0]);
-            jadwal.setMatkul(aKonten_jadwal[1]);
-            jadwal.setDosen(aKonten_jadwal[2]);
-            jadwal.setRuang(aKonten_jadwal[3]);
+        Calendar calendar = Calendar.getInstance();
+        int today  = calendar.get(Calendar.DAY_OF_WEEK);
 
-            jadwal_overview_array.add(jadwal);
+        View emptyView;
+        if (today == 1 || today == 7) {
+            emptyView = getLayoutInflater().inflate(R.layout.jadwal_empty_weekend, null);
+        } else {
+            emptyView = getLayoutInflater().inflate(R.layout.jadwal_empty_weekday, null);
+        }
+        jadwal_overview.setEmptyView(emptyView);
+
+        if(today > 1 && today < 7) {
+            today = today-2;
+            for (int j = 0; j < StringContainer.konten_jadwal[today].length; j++) {
+                jadwal = new JadwalOverviewGetsetter();
+                jadwal.setSesi(StringContainer.konten_jadwal[today][j][0]);
+                jadwal.setMatkul(StringContainer.konten_jadwal[today][j][1]);
+                jadwal.setDosen(StringContainer.konten_jadwal[today][j][2]);
+                jadwal.setRuang(StringContainer.konten_jadwal[today][j][3]);
+
+                jadwal_overview_array.add(jadwal);
+            }
         }
 
-        JadwalOverview adapterJadwal = new JadwalOverview(HomeActivity.this, jadwal_overview_array);
+        Jadwal adapterJadwal = new Jadwal(HomeActivity.this, jadwal_overview_array);
         jadwal_overview.setAdapter(adapterJadwal);
 
         berita_overview = (ListView)findViewById(R.id.list_berita_overview);
@@ -118,11 +132,15 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
             berita_overview_array.add(berita);
         }
 
-        BeritaOverview adapterBerita = new BeritaOverview(HomeActivity.this, berita_overview_array);
+        Berita adapterBerita = new Berita(HomeActivity.this, berita_overview_array);
         berita_overview.setAdapter(adapterBerita);
 
-        setListViewHeight(jadwal_overview);
-        setListViewHeight(berita_overview);
+        if(!jadwal_overview_array.isEmpty()) {
+            setListViewHeight(jadwal_overview);
+        }
+        if(!berita_overview_array.isEmpty()) {
+            setListViewHeight(berita_overview);
+        }
 
         CircleImageView circleImageView = (CircleImageView)findViewById(R.id.detail_userpic);
         circleImageView.setImageResource(R.drawable.ic_user);
@@ -146,8 +164,16 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
                 startActivityForResult(intent, 0);
             }
         });
-    }
 
+        buttons[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, NilaiActivity.class);
+                startActivity(i);
+            }
+        });
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

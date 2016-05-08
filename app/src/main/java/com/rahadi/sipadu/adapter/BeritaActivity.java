@@ -49,7 +49,7 @@ public class BeritaActivity extends AppCompatActivity {
             listItem.add(berita);
         }
 
-        BeritaOverview adapter = new BeritaOverview(BeritaActivity.this, listItem);
+        Berita adapter = new Berita(BeritaActivity.this, listItem);
         lvItem.setAdapter(adapter);
 
         lvItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {

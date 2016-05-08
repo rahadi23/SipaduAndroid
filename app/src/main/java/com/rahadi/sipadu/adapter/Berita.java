@@ -16,11 +16,11 @@ import java.util.ArrayList;
 /**
  * Created by Rahadi on 12/04/2016.
  */
-public class BeritaOverview extends BaseAdapter {
+public class Berita extends BaseAdapter {
     Activity activity;
     ArrayList<BeritaGetsetter> listItem;
 
-    public BeritaOverview(Activity activity, ArrayList<BeritaGetsetter> listItem){
+    public Berita(Activity activity, ArrayList<BeritaGetsetter> listItem){
         this.activity = activity;
         this.listItem = listItem;
     }
