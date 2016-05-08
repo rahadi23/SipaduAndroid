@@ -54,6 +54,8 @@ public class JadwalOverview extends BaseAdapter {
             holder.matkul = (TextView)view.findViewById(R.id.mata_kuliah);
             holder.dosen = (TextView)view.findViewById(R.id.nama_dosen);
             holder.ruang = (TextView)view.findViewById(R.id.ruang_kelas);
+
+//            holder.matkul.setSelected(true);
             view.setTag(holder);
         } else {
             holder = (ViewHolder)view.getTag();

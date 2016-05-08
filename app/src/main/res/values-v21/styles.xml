@@ -13,6 +13,6 @@
 
     <style name="AppTheme.NoActionBar.ForHome" parent="AppTheme.NoActionBar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">#50000000</item>
+        <item name="android:statusBarColor">#32000000</item>
     </style>
 </resources>

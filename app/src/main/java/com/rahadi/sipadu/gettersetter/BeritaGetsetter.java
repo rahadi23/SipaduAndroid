@@ -1,10 +1,12 @@
 package com.rahadi.sipadu.gettersetter;
 
+import java.io.Serializable;
+
 /**
  * Created by Rahadi on 12/04/2016.
  */
-public class BeritaOverviewGetsetter {
-    String inisial, nama, tanggal, pengirim;
+public class BeritaGetsetter implements Serializable {
+    String inisial, nama, tanggal, pengirim, isi;
 
     public String getInisial() {
         return inisial;
@@ -36,5 +38,13 @@ public class BeritaOverviewGetsetter {
 
     public void setPengirim(String pengirim) {
         this.pengirim = pengirim;
+    }
+
+    public String getIsi() {
+        return isi;
+    }
+
+    public void setIsi(String isi) {
+        this.isi = isi;
     }
 }

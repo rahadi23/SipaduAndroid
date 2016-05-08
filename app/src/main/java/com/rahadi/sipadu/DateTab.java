@@ -66,9 +66,14 @@ public class DateTab extends LinearLayout {
         int todayno = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         ImageView[] s;
 
+        if(todayno == 7 || todayno == 1) {
+            DateTab tab = (DateTab)findViewById(R.id.jadwal_tab_overview);
+            tab.setVisibility(GONE);
+        }
+
         for(int i = 0; i < 5; i++) {
             c = Calendar.getInstance();
-            c.setFirstDayOfWeek(Calendar.SUNDAY);
+            c.setFirstDayOfWeek(Calendar.MONDAY);
             c.set(Calendar.DAY_OF_WEEK, (i + 2));
 
             konten[i] = new DateTabGetsetter();
@@ -90,7 +95,7 @@ public class DateTab extends LinearLayout {
 
         int sesi[][] = new int[5][];
 
-        for(int i = 0; i < 5; i ++) {
+        for(int i = 0; i < 5; i++) {
             s = getImageViewList(i);
             sesi[i] = konten[i].getSesi();
 

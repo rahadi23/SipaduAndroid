@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBar;
 import android.util.DisplayMetrics;
@@ -16,8 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,37 +28,20 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.gettersetter.BeritaOverviewGetsetter;
+import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
 import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
 
-    String[][] konten_jadwal = new String[][] {
-            {"1", "Pemrograman Berorientasi Objek", "Takdir SST., M.T.", "244"},
-            {"2", "Basis Data Lanjutan", "Abdul Ghofar S.Si, MTI.", "254"},
-            {"3", "Statistika Matematika II", "Erni Tri Astuti, M.Math.", "341"}
-    };
-    String[][] konten_berita = new String[][] {
-            {"Kan bisa diatur di settings hehew", "29/04/2016", "Komnet Dev Team"},
-            {"Kayaknya 5 item itu kebanyakan", "29/04/2016", "Komnet Dev Team"},
-            {"TODO: tombol, transaksi, read", "29/04/2016", "Komnet Dev Team"},
-            {"Wututututu!", "29/04/2016", "Komnet Dev Team"},
-            {"Welcome to the new Sipadu!", "11/04/2016", "Komnet Dev Team"},
-            {"Kuliah Pertama", "23/03/2016", "Said Mirza Pahlevi"},
-            {"Her Statmat", "13/03/2016", "BAAK"}
-    };
-
     private ListView jadwal_overview, berita_overview;
     private ArrayList<JadwalOverviewGetsetter> jadwal_overview_array;
-    private ArrayList<BeritaOverviewGetsetter> berita_overview_array;
+    private ArrayList<BeritaGetsetter> berita_overview_array;
     private ObservableScrollView mScrollView;
     private int parallaxHeight;
     private DisplayMetrics displayMetrics;
@@ -104,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         JadwalOverviewGetsetter jadwal = null;
 
-        for (String[] aKonten_jadwal : konten_jadwal) {
+        for (String[] aKonten_jadwal : StringContainer.konten_jadwal) {
             jadwal = new JadwalOverviewGetsetter();
             jadwal.setSesi(aKonten_jadwal[0]);
             jadwal.setMatkul(aKonten_jadwal[1]);
@@ -120,15 +104,16 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         berita_overview = (ListView)findViewById(R.id.list_berita_overview);
         berita_overview_array = new ArrayList<>();
 
-        BeritaOverviewGetsetter berita = null;
+        BeritaGetsetter berita = null;
         int jumlah_berita_overview = 5;
 
         for(int i = 0; i<jumlah_berita_overview; i++) {
-            berita = new BeritaOverviewGetsetter();
-            berita.setInisial(konten_berita[i][0].substring(0, 1));
-            berita.setNama(konten_berita[i][0]);
-            berita.setTanggal(konten_berita[i][1]);
-            berita.setPengirim(konten_berita[i][2]);
+            berita = new BeritaGetsetter();
+            berita.setInisial(StringContainer.konten_berita[i][0].substring(0, 1).toUpperCase());
+            berita.setNama(StringContainer.konten_berita[i][0]);
+            berita.setTanggal(StringContainer.konten_berita[i][1]);
+            berita.setPengirim(StringContainer.konten_berita[i][2]);
+            berita.setIsi(StringContainer.konten_berita[i][3]);
 
             berita_overview_array.add(berita);
         }
@@ -142,6 +127,25 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         CircleImageView circleImageView = (CircleImageView)findViewById(R.id.detail_userpic);
         circleImageView.setImageResource(R.drawable.ic_user);
 
+        CardView beritaOverview = (CardView)findViewById(R.id.card_view_berita_overview);
+        beritaOverview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BeritaActivity.class);
+                startActivity(i);
+            }
+        });
+
+        berita_overview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                BeritaGetsetter mbl = berita_overview_array.get(position);
+
+                Intent intent = new Intent(HomeActivity.this, BeritaDetailActivity.class);
+                intent.putExtra(BeritaDetailActivity.KEY_ITEM, mbl);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
 
     @Override
@@ -273,8 +277,8 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         kelas.setPivotX(0);
         kelas.setPivotY(0);
 
-        int tempUnameX = (int)ScrollUtils.getFloat(scrollY-(parallaxHeight/2), 0, (unameSpace-marginDefault));
-        int tempKelasX = (int)ScrollUtils.getFloat(scrollY-(parallaxHeight/2), 0, (kelasSpace-marginDefault));
+        int tempUnameX = (int)ScrollUtils.getFloat(scrollY-(parallaxHeight/2), 0, parallaxHeight);
+        int tempKelasX = (int)ScrollUtils.getFloat(scrollY-(parallaxHeight/2), 0, (kelasSpace));
         int adjustedUnameX = (int)ScrollUtils.getFloat(((unameSpace-marginDefault)/uname.getY())*tempUnameX, 0, (unameSpace-marginDefault));
         int adjustedKelasX = (int)ScrollUtils.getFloat(((kelasSpace+toolbar.getHeight()+marginDefault)/kelas.getY())*tempKelasX, 0, (kelasSpace-marginDefault));
         uname.setTranslationX(-adjustedUnameX);
@@ -353,7 +357,7 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
             month = "";
         }
         if(usage.equals("JADWAL_OVERVIEW")) {
-            tanggal = day + ", " + calendar.get(Calendar.DAY_OF_WEEK) + " " + month + " " + calendar.get(Calendar.YEAR);
+            tanggal = day + ", " + calendar.get(Calendar.DAY_OF_MONTH) + " " + month + " " + calendar.get(Calendar.YEAR);
             return tanggal;
         }
         return "";

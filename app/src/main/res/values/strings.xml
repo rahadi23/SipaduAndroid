@@ -5,6 +5,7 @@
     <string name="password">PASSWORD</string>
     <string name="logotransition">logotransition</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_berita">BERITA</string>
     <string name="title_activity_splashscreen">splashscreen</string>
 
     <!-- TODO: Remove or change this placeholder text -->
