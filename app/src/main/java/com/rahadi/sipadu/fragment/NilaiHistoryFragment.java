@@ -3,16 +3,14 @@ package com.rahadi.sipadu.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rahadi.sipadu.R;
 import com.rahadi.sipadu.adapter.Nilai;
-import com.rahadi.sipadu.adapter.StringContainer;
+import com.rahadi.sipadu.adapter.ArrayContainer;
 import com.rahadi.sipadu.gettersetter.NilaiGetsetter;
 
 import java.util.ArrayList;
@@ -44,12 +42,12 @@ public class NilaiHistoryFragment extends Fragment {
 
         listItem = new ArrayList<>();
         NilaiGetsetter nilai;
-        for (int i = 0; i < StringContainer.konten_nilai_history.length; i++){
+        for (int i = 0; i < ArrayContainer.konten_nilai_history.length; i++){
             nilai = new NilaiGetsetter();
-            nilai.setInisial(StringContainer.konten_nilai_history[i][0].substring(0, 1).toUpperCase());
-            nilai.setNamamatkul(StringContainer.konten_nilai_history[i][0]);
-            nilai.setNamadosen(StringContainer.konten_nilai_history[i][1]);
-            nilai.setNilai(StringContainer.konten_nilai_history[i][2]);
+            nilai.setInisial(ArrayContainer.konten_nilai_history[i][0].substring(0, 1).toUpperCase());
+            nilai.setNamamatkul(ArrayContainer.konten_nilai_history[i][0]);
+            nilai.setNamadosen(ArrayContainer.konten_nilai_history[i][1]);
+            nilai.setNilai(ArrayContainer.konten_nilai_history[i][2]);
 
             listItem.add(nilai);
         }
@@ -59,23 +57,22 @@ public class NilaiHistoryFragment extends Fragment {
         View v2 = v.findViewById(R.id.v_emptyHistoryNilai);
         ListView listHistoryNilai = (ListView)v.findViewById(R.id.lv_historynilai);
         TextView emptyfiller2 = (TextView) v.findViewById(R.id.tv_empty);
-        emptyfiller2.setText("History Nilai Tidak Tersedia Untuk " + nim);
+        emptyfiller2.setText("History Nilai Tidak Tersedia");
         listHistoryNilai.setAdapter(adapter);
         listHistoryNilai.setEmptyView(v2);
-
+        
         return v;
     }
 
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getActivity().getMenuInflater().inflate(R.menu.menu_main, menu);
+        v.getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 */
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
 
     }
 }

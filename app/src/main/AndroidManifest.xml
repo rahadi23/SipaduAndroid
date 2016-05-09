@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".adapter.LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,22 +18,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".adapter.HomeActivity"
+            android:name=".Activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar.ForHome" />
         <activity
-            android:name=".adapter.SplashScreen"
+            android:name=".Activity.SplashScreenActivity"
             android:label="@string/title_activity_splashscreen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".adapter.BeritaActivity"
+            android:name=".Activity.BeritaActivity"
             android:label="@string/title_activity_berita"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".adapter.BeritaDetailActivity"
+            android:name=".Activity.BeritaDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".adapter.NilaiActivity"
+            android:name=".Activity.NilaiActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

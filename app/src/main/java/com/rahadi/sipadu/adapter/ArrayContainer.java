@@ -3,7 +3,7 @@ package com.rahadi.sipadu.adapter;
 /**
  * Created by Rahadi on 06/05/2016.
  */
-public class StringContainer {
+public class ArrayContainer {
     public static String[][] konten_berita = new String[][]{
             {"Apel Senin rutin bagi mahasiswa Sekolah Tinggi Ilmu Statistik Tingkat II","01/04/2016","BAAK","PENGUMUMAN\n" +
                     "\n" +
@@ -123,7 +123,7 @@ public class StringContainer {
     };
 
     public static String[][] konten_nilai_aktif = new String[][] {
-            {"Metode Statistik II","Dosen Metstat","B-"},
+            {"Metode Statistik II","Dosen Metstat","B"},
             {"Struktur Data","Dosen Strukdat","A-"},
             {"Statistika Matematika","Dosen Statmat","A+"},
             {"Basis Data","Dosen Basdat","B+"},

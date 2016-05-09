@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.rahadi.sipadu.R;
+import com.rahadi.sipadu.adapter.ArrayContainer;
+import com.rahadi.sipadu.adapter.Berita;
 import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
 
 import java.util.ArrayList;
@@ -38,13 +40,13 @@ public class BeritaActivity extends AppCompatActivity {
 
         BeritaGetsetter berita = null;
 
-        for (int i = 0; i < StringContainer.konten_berita.length; i++){
+        for (int i = 0; i < ArrayContainer.konten_berita.length; i++){
             berita = new BeritaGetsetter();
-            berita.setInisial(StringContainer.konten_berita[i][0].substring(0, 1).toUpperCase());
-            berita.setNama(StringContainer.konten_berita[i][0]);
-            berita.setTanggal(StringContainer.konten_berita[i][1]);
-            berita.setPengirim(StringContainer.konten_berita[i][2]);
-            berita.setIsi(StringContainer.konten_berita[i][3]);
+            berita.setInisial(ArrayContainer.konten_berita[i][0].substring(0, 1).toUpperCase());
+            berita.setNama(ArrayContainer.konten_berita[i][0]);
+            berita.setTanggal(ArrayContainer.konten_berita[i][1]);
+            berita.setPengirim(ArrayContainer.konten_berita[i][2]);
+            berita.setIsi(ArrayContainer.konten_berita[i][3]);
 
             listItem.add(berita);
         }

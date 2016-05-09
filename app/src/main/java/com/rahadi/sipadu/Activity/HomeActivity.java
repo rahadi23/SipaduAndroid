@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +28,9 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.rahadi.sipadu.R;
+import com.rahadi.sipadu.adapter.ArrayContainer;
+import com.rahadi.sipadu.adapter.Berita;
+import com.rahadi.sipadu.adapter.Jadwal;
 import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
 import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
 
@@ -91,22 +94,14 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         Calendar calendar = Calendar.getInstance();
         int today  = calendar.get(Calendar.DAY_OF_WEEK);
 
-        View emptyView;
-        if (today == 1 || today == 7) {
-            emptyView = getLayoutInflater().inflate(R.layout.jadwal_empty_weekend, null);
-        } else {
-            emptyView = getLayoutInflater().inflate(R.layout.jadwal_empty_weekday, null);
-        }
-        jadwal_overview.setEmptyView(emptyView);
-
         if(today > 1 && today < 7) {
             today = today-2;
-            for (int j = 0; j < StringContainer.konten_jadwal[today].length; j++) {
+            for (int j = 0; j < ArrayContainer.konten_jadwal[today].length; j++) {
                 jadwal = new JadwalOverviewGetsetter();
-                jadwal.setSesi(StringContainer.konten_jadwal[today][j][0]);
-                jadwal.setMatkul(StringContainer.konten_jadwal[today][j][1]);
-                jadwal.setDosen(StringContainer.konten_jadwal[today][j][2]);
-                jadwal.setRuang(StringContainer.konten_jadwal[today][j][3]);
+                jadwal.setSesi(ArrayContainer.konten_jadwal[today][j][0]);
+                jadwal.setMatkul(ArrayContainer.konten_jadwal[today][j][1]);
+                jadwal.setDosen(ArrayContainer.konten_jadwal[today][j][2]);
+                jadwal.setRuang(ArrayContainer.konten_jadwal[today][j][3]);
 
                 jadwal_overview_array.add(jadwal);
             }
@@ -114,6 +109,14 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         Jadwal adapterJadwal = new Jadwal(HomeActivity.this, jadwal_overview_array);
         jadwal_overview.setAdapter(adapterJadwal);
+
+        View emptyView;
+        if (today == 1 || today == 7) {
+            emptyView = findViewById(R.id.jadwal_empty_weekend);
+        } else {
+            emptyView = findViewById(R.id.jadwal_empty_weekday);
+        }
+        jadwal_overview.setEmptyView(emptyView);
 
         berita_overview = (ListView)findViewById(R.id.list_berita_overview);
         berita_overview_array = new ArrayList<>();
@@ -123,11 +126,11 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
         for(int i = 0; i<jumlah_berita_overview; i++) {
             berita = new BeritaGetsetter();
-            berita.setInisial(StringContainer.konten_berita[i][0].substring(0, 1).toUpperCase());
-            berita.setNama(StringContainer.konten_berita[i][0]);
-            berita.setTanggal(StringContainer.konten_berita[i][1]);
-            berita.setPengirim(StringContainer.konten_berita[i][2]);
-            berita.setIsi(StringContainer.konten_berita[i][3]);
+            berita.setInisial(ArrayContainer.konten_berita[i][0].substring(0, 1).toUpperCase());
+            berita.setNama(ArrayContainer.konten_berita[i][0]);
+            berita.setTanggal(ArrayContainer.konten_berita[i][1]);
+            berita.setPengirim(ArrayContainer.konten_berita[i][2]);
+            berita.setIsi(ArrayContainer.konten_berita[i][3]);
 
             berita_overview_array.add(berita);
         }

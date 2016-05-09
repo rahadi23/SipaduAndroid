@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.Activity;
 
 import android.app.ActionBar;
 import android.content.Intent;
