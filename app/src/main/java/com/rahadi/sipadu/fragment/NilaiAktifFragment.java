@@ -1,6 +1,5 @@
 package com.rahadi.sipadu.fragment;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -10,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -87,16 +88,16 @@ public class NilaiAktifFragment extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
-//                View info = getActivity().getLayoutInflater().inflate(R.layout.info_nilai, null);
-//                dialogBuilder.setView(info);
-                AlertDialog info_nilai = dialogBuilder.create();
-                info_nilai.setTitle("Informasi Nilai IP");
-                info_nilai.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+                View info = getActivity().getLayoutInflater().inflate(R.layout.info_nilai, null);
+                dialogBuilder.setView(info);
+                final AlertDialog info_nilai = dialogBuilder.create();
+                Button close = (Button)info.findViewById(R.id.info_btn);
+                close.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        info_nilai.dismiss();
+                    }
+                });
                 info_nilai.show();
                 return true;
             }

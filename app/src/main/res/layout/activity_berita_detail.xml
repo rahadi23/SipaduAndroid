@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.BeritaDetailActivity">
+    tools:context=".Activity.BeritaDetailActivity">
 
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:layout_margin="10dp"/>
         </LinearLayout>
 
@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:gravity="center"
                 android:paddingLeft="@dimen/padding_text_head_berita_detail"
                 android:paddingBottom="@dimen/padding_text_head_berita_detail"
@@ -69,7 +69,7 @@
                 android:gravity="center"
                 android:text="Tanggal"
                 android:padding="5dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@android:color/white"
                 android:layout_weight="1"/>
             <View
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/pengirim_berita_detail"
                 android:background="#ff4d4d4d"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:singleLine="true"
                 android:scrollHorizontally="true"
                 android:ellipsize="marquee"

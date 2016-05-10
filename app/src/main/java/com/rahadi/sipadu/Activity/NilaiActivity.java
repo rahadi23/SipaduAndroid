@@ -1,6 +1,5 @@
 package com.rahadi.sipadu.Activity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;

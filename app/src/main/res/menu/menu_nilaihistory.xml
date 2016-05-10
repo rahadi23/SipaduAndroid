@@ -12,8 +12,8 @@
     <item
         android:id="@+id/info"
         android:orderInCategory="100"
-        android:title="Info"
+        android:title="Informasi Nilai IP"
         app:showAsAction="always"
-        android:icon="@drawable/info"/>
+        android:icon="@drawable/ic_info"/>
 
 </menu>
