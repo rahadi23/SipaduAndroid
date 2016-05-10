@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.gettersetter;
+package com.rahadi.sipadu.gettersetters;
 
 /**
  * Created by Rahadi on 10/04/2016.

@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
+import com.rahadi.sipadu.gettersetters.JadwalOverviewGetsetter;
 
 import java.util.ArrayList;
 

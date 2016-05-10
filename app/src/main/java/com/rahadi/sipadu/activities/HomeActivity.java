@@ -28,11 +28,11 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.adapter.ArrayContainer;
-import com.rahadi.sipadu.adapter.Berita;
-import com.rahadi.sipadu.adapter.Jadwal;
-import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
-import com.rahadi.sipadu.gettersetter.JadwalOverviewGetsetter;
+import com.rahadi.sipadu.adapters.ArrayContainer;
+import com.rahadi.sipadu.adapters.Berita;
+import com.rahadi.sipadu.adapters.Jadwal;
+import com.rahadi.sipadu.gettersetters.BeritaGetsetter;
+import com.rahadi.sipadu.gettersetters.JadwalOverviewGetsetter;
 
 import java.util.ArrayList;
 import java.util.Calendar;

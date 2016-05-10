@@ -1,6 +1,4 @@
-package com.rahadi.sipadu.gettersetter;
-
-import java.util.ArrayList;
+package com.rahadi.sipadu.gettersetters;
 
 /**
  * Created by Rahadi on 08/05/2016.

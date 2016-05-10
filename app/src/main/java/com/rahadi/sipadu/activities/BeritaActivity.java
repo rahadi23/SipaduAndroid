@@ -11,9 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.adapter.ArrayContainer;
-import com.rahadi.sipadu.adapter.Berita;
-import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
+import com.rahadi.sipadu.adapters.ArrayContainer;
+import com.rahadi.sipadu.adapters.Berita;
+import com.rahadi.sipadu.gettersetters.BeritaGetsetter;
 
 import java.util.ArrayList;
 

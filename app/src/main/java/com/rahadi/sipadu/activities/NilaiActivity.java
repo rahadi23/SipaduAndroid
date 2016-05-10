@@ -12,8 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.fragment.NilaiAktifFragment;
-import com.rahadi.sipadu.fragment.NilaiHistoryFragment;
+import com.rahadi.sipadu.fragments.NilaiAktifFragment;
+import com.rahadi.sipadu.fragments.NilaiHistoryFragment;
 
 import java.util.ArrayList;
 import java.util.List;

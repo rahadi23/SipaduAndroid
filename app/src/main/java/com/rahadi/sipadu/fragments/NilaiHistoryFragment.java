@@ -1,14 +1,11 @@
-package com.rahadi.sipadu.fragment;
+package com.rahadi.sipadu.fragments;
 
 
-import android.content.DialogInterface;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,14 +18,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.adapter.Nilai;
-import com.rahadi.sipadu.adapter.ArrayContainer;
-import com.rahadi.sipadu.gettersetter.NilaiGetsetter;
+import com.rahadi.sipadu.adapters.Nilai;
+import com.rahadi.sipadu.adapters.ArrayContainer;
+import com.rahadi.sipadu.gettersetters.NilaiGetsetter;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

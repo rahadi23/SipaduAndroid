@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.gettersetter;
+package com.rahadi.sipadu.gettersetters;
 
 import java.io.Serializable;
 

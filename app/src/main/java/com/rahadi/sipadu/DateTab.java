@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.rahadi.sipadu.adapter.ArrayContainer;
-import com.rahadi.sipadu.gettersetter.DateTabGetsetter;
+import com.rahadi.sipadu.adapters.ArrayContainer;
+import com.rahadi.sipadu.gettersetters.DateTabGetsetter;
 
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.fragment;
+package com.rahadi.sipadu.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,9 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.adapter.Nilai;
-import com.rahadi.sipadu.adapter.ArrayContainer;
-import com.rahadi.sipadu.gettersetter.NilaiGetsetter;
+import com.rahadi.sipadu.adapters.Nilai;
+import com.rahadi.sipadu.adapters.ArrayContainer;
+import com.rahadi.sipadu.gettersetters.NilaiGetsetter;
 
 import java.util.ArrayList;
 

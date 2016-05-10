@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.adapters;
 
 /**
  * Created by Rahadi on 06/05/2016.

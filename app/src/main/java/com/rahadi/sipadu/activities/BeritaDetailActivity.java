@@ -13,7 +13,7 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
+import com.rahadi.sipadu.gettersetters.BeritaGetsetter;
 
 //import com.squareup.picasso.Picasso;
 

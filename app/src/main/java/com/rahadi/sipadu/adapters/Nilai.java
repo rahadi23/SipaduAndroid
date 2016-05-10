@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.adapter;
+package com.rahadi.sipadu.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,8 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.gettersetter.BeritaGetsetter;
-import com.rahadi.sipadu.gettersetter.NilaiGetsetter;
+import com.rahadi.sipadu.gettersetters.NilaiGetsetter;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,6 @@
-package com.rahadi.sipadu.gettersetter;
-
-import android.content.Context;
-import android.widget.ImageView;
+package com.rahadi.sipadu.gettersetters;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 /**

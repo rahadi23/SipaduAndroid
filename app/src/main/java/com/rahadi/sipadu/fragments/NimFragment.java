@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.fragment;
+package com.rahadi.sipadu.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -8,24 +8,18 @@ import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rahadi.sipadu.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PasswordFragment.OnFragmentInteractionListener} interface
+ * {@link NimFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PasswordFragment#newInstance} factory method to
+ * Use the {@link NimFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PasswordFragment extends Fragment {
+public class NimFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,34 +31,46 @@ public class PasswordFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public PasswordFragment() {
+    public NimFragment() {
         // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment NimFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static NimFragment newInstance(String param1, String param2) {
+        NimFragment fragment = new NimFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_password, container, false);
-        CircleImageView circleImageView = (CircleImageView)view.findViewById(R.id.profile_picture);
-        circleImageView.setImageResource(R.drawable.ic_user);
 
-        TextView nama_user = (TextView)view.findViewById(R.id.nama_user);
-        nama_user.setText("Rahadi Jalu Yoga Utama");
+        View view = inflater.inflate(R.layout.fragment_nim, container, false);
 
-        TextView kelas_user = (TextView)view.findViewById(R.id.kelas_user);
-        kelas_user.setText("2KS2");
-
-        TextInputLayout password_support = (TextInputLayout)view.findViewById(R.id.password_support);
-        password_support.setHintAnimationEnabled(true);
-
-        EditText password_input = (EditText)view.findViewById(R.id.password_input);
-        password_input.requestFocus();
+        TextInputLayout nim_support = (TextInputLayout)view.findViewById(R.id.nim_support);
+        nim_support.setHintAnimationEnabled(true);
 
         return view;
     }

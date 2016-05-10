@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.fragment.NimFragment;
-import com.rahadi.sipadu.fragment.PasswordFragment;
+import com.rahadi.sipadu.fragments.NimFragment;
+import com.rahadi.sipadu.fragments.PasswordFragment;
 
 public class LoginActivity extends AppCompatActivity {
 
