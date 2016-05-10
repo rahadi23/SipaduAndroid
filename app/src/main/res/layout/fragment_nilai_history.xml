@@ -17,8 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_empty"
-            android:layout_gravity="center"
-            android:text="Empty History Nilai"/>
+            android:layout_gravity="center"/>
 
     </FrameLayout>
 

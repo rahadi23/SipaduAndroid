@@ -130,7 +130,29 @@ public class ArrayContainer {
             {"Pendidikan Kewarganegaraan","Dosen PKN","A-"},
             {"Matematika Diskrit","Dosen Matdis","A"}
     };
-    public static String[][] konten_nilai_history = new String[][] {
+
+    public static String[][] konten_nilai_history1= new String[][] {
+            {"Pengantar Demografi","Dosen Demografi","A"},
+            {"Kalkulus","Dosen Kalkulus","A-"},
+            {"Metode Statistika I","Dosen Metode Statistika I","B"},
+            {"Agama","Dosen Agama","B+"},
+            {"PTI","Dosen PTI","A-"},
+            {"Bahasa Inggris","Dosen Bahasa Inggris","A-"},
+            {"Aljabar Linear","Dosen Aljabar Linear","A-"}
+    };
+
+    public static String[][] konten_nilai_history2 = new String[][] {
+            {"Pengantar Teori Peluang","Dosen Peluang","B+"},
+            {"Analisis Data Eksploratif","Dosen Analisis Data Eksploratif","A-"},
+            {"Algoritma Pemrograman","Dosen Algoritma Pemrograman","A-"},
+            {"Bahasa Indonesia","Dosen Bahasa Indonesia","A"},
+            {"Bahasa Inggris II","Dosen Bahasa Inggris","A-"},
+            {"Kalkulus II","Dosen Kalkulus II","B"},
+            {"Pengantar Ekonomi","Dosen Pengantar Ekonomi","A-"},
+            {"Pengantar Sosiologi","Dosen Pengantar Sosiologi","B"}
+    };
+
+    public static String[][] konten_nilai_history3 = new String[][] {
             {"Metode Statistik II","Dosen Metstat","B"},
             {"Struktur Data","Dosen Strukdat","A-"},
             {"Statistika Matematika","Dosen Statmat","A+"},
@@ -138,4 +160,7 @@ public class ArrayContainer {
             {"Pendidikan Kewarganegaraan","Dosen PKN","A-"},
             {"Matematika Diskrit","Dosen Matdis","A"}
     };
+
+    public static int semester = 6;
+
 }

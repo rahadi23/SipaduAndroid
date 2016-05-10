@@ -1,8 +1,13 @@
 package com.rahadi.sipadu.fragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -28,6 +33,7 @@ public class NilaiAktifFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
 
@@ -69,5 +75,31 @@ public class NilaiAktifFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_nilaiaktif, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+
+        MenuItem item1 = menu.findItem(R.id.info);
+        item1.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+//                View info = getActivity().getLayoutInflater().inflate(R.layout.info_nilai, null);
+//                dialogBuilder.setView(info);
+                AlertDialog info_nilai = dialogBuilder.create();
+                info_nilai.setTitle("Informasi Nilai IP");
+                info_nilai.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                info_nilai.show();
+                return true;
+            }
+        });
     }
 }

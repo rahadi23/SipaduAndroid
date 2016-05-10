@@ -67,7 +67,12 @@ public class Nilai extends BaseAdapter {
         holder.inisial.setText(getset.getInisial());
         holder.namamatkul.setText(getset.getNamamatkul());
         holder.namadosen.setText(getset.getNamadosen());
-        holder.nilai.setText(getset.getNilai().substring(0,1));
+        holder.nilai.setText(getset.getNilai().substring(0, 1));
+
+        holder.plus.setBackgroundColor(view.getResources().getColor(R.color.switchInactive));
+        holder.minus.setBackgroundColor(view.getResources().getColor(R.color.switchInactive));
+
+
         if(getset.getNilai().length() > 1) {
             if(getset.getNilai().substring(1,2).equalsIgnoreCase("-")) {
                 holder.minus.setBackgroundColor(view.getResources().getColor(R.color.colorPrimary));
