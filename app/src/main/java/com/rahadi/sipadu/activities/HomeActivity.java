@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.activity;
+package com.rahadi.sipadu.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         if(actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
         toolbar.setBackgroundColor(ScrollUtils.getColorWithAlpha(0, getResources().getColor(R.color.colorPrimary)));
         mScrollView = (ObservableScrollView)findViewById(R.id.scroller);
         mScrollView.setScrollViewCallbacks(this);

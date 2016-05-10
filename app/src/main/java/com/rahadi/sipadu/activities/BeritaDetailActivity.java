@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.activity;
+package com.rahadi.sipadu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
