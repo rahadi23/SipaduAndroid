@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Activity.SplashScreenActivity">
+    tools:context=".activity.SplashScreenActivity">
 
     <LinearLayout
         android:background="@color/colorPrimary"
@@ -28,7 +28,7 @@
         android:layout_marginTop="20dip"
         android:textStyle="bold"
         android:textColor="#ffffffff"
-        android:textSize="25sp"
+        android:textSize="25dp"
         android:id="@+id/textJudul"
         />
     </LinearLayout>

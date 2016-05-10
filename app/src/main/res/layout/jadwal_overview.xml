@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.HomeActivity"
+    tools:context=".activity.HomeActivity"
     tools:showIn="@layout/activity_home">
 
     <android.support.v7.widget.CardView
@@ -30,7 +30,7 @@
                 android:background="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"/>
 
@@ -42,7 +42,7 @@
                 android:textAlignment="center"
                 android:background="#ff4d4d4d"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="14dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"/>
 

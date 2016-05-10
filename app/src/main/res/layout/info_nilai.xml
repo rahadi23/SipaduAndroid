@@ -36,7 +36,7 @@
                     android:textStyle="bold"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="16sp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -45,7 +45,7 @@
                     android:textStyle="bold"
                     android:singleLine="true"
                     android:gravity="center"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:padding="3dip" />
 
             </TableRow>
@@ -63,7 +63,7 @@
                     android:text="A"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -80,7 +80,7 @@
                     android:text="A-"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -97,7 +97,7 @@
                     android:text="B+"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -114,7 +114,7 @@
                     android:text="B"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -131,7 +131,7 @@
                     android:text="C+"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -148,7 +148,7 @@
                     android:text="C"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -165,7 +165,7 @@
                     android:text="D+"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -182,7 +182,7 @@
                     android:text="D"
                     android:gravity="center"
                     android:padding="3dip"
-                    android:textSize="14sp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_column="2"
@@ -220,7 +220,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/flexible_space_height"
         android:text="OK"
-        android:textSize="15sp"
+        android:textSize="15dp"
         android:textColor="#ffffffff"
         android:id="@+id/info_btn" />
 

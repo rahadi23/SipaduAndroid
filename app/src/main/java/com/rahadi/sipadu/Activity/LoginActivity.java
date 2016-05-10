@@ -1,4 +1,4 @@
-package com.rahadi.sipadu.Activity;
+package com.rahadi.sipadu.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;

@@ -21,7 +21,7 @@
                 android:layout_height="match_parent"
                 android:text="B"
                 android:gravity="center_horizontal|center_vertical"
-                android:textSize="25sp"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:id="@+id/inisial_berita"
@@ -46,7 +46,7 @@
                 android:singleLine="true"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
-                android:textSize="14sp"
+                android:textSize="14dp"
                 android:id="@+id/nama_berita"
                 android:textAllCaps="true"/>
             <LinearLayout
@@ -61,7 +61,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:textColor="#ff4d4d4d"
-                    android:textSize="13sp"
+                    android:textSize="13dp"
                     android:id="@+id/tanggal_berita"/>
                 <View
                     android:layout_width="1dp"
@@ -77,7 +77,7 @@
                     android:textColor="#ff4d4d4d"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:textSize="13sp"
+                    android:textSize="13dp"
                     android:id="@+id/pengirim_berita"/>
             </LinearLayout>
         </LinearLayout>
