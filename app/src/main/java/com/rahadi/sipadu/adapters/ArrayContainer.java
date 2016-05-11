@@ -4,6 +4,21 @@ package com.rahadi.sipadu.adapters;
  * Created by Rahadi on 06/05/2016.
  */
 public class ArrayContainer {
+
+    private String[] identitas = {"14.8325", "Rahadi Jalu Yoga Utama", "2KS2"};
+
+    public String getNim() {
+        return identitas[0];
+    }
+
+    public String getNama() {
+        return identitas[1];
+    }
+
+    public String getKelas() {
+        return identitas[2];
+    }
+
     public static String[][] konten_berita = new String[][]{
             {"Apel Senin rutin bagi mahasiswa Sekolah Tinggi Ilmu Statistik Tingkat II","01/04/2016","BAAK","PENGUMUMAN\n" +
                     "\n" +
@@ -162,5 +177,24 @@ public class ArrayContainer {
     };
 
     public static int semester = 6;
+
+    public static String[][] konten_absensi = new String[][]{
+            {"14.8189","2015","4","Analisis Regresi", "Nurseto", "100"},
+            {"14.8189","2015","4","Object Oriented Programming", "Takdir", "90"},
+            {"14.8189","2015","4","Web Based Programing", "Takdir", "80"},
+            {"14.8189","2015","4","Survey Contoh", "Erni Triastuti", "70"},
+            {"14.8189","2015","4","Statistika Matematika II", "Bony Parulian Josaphat", "60"},
+            {"14.8189","2015","4","Basis Data Lanjutan", "Margareth Ari Anggorowati", "50"},
+            {"14.8189","2015","4","Komputasi Statistik", "Sukim", "40"},
+            {"14.8189","2015","4","Dashboard Absensi", "isfann", "0"},
+            {"14.7189","2015","3","Struktur Data", "Ibnu Santoso", "30"},
+            {"14.7189","2015","3","Basis Data", "Siti Mariyah", "40"},
+            {"14.7189","2015","3","Kewarganegaraan", "Suryanto Aloysius", "50"},
+            {"14.7189","2015","3","Metode Statistika II", "Gamma Danu Putra Sohibien", "60"},
+            {"14.7189","2015","3","Statistika Matematika I", "Bony Parulian Josaphat", "70"},
+            {"14.7189","2015","3","Matematika Diskrit", "Firdaus", "80"},
+            {"14.7189","2015","3","Metode Penarikan Contoh KS", "Achmad Prasetyo", "90"},
+            {"14.7189","2015","3","Dashboard Absensi", "isfann", "100"},
+    };
 
 }

@@ -55,7 +55,7 @@ public class Berita extends BaseAdapter {
                 holder.tanggal = (TextView)view.findViewById(R.id.tanggal_berita);
                 holder.pengirim = (TextView)view.findViewById(R.id.pengirim_berita);
             } else if(activity.getClass().getSimpleName().equals("BeritaActivity")) {
-                view = inflater.inflate(R.layout.activity_berita_list, null);
+                view = inflater.inflate(R.layout.berita_list, null);
                 holder.inisial = (TextView)view.findViewById(R.id.berita_txt_item_icon);
                 holder.berita = (TextView)view.findViewById(R.id.berita_txt_item_judul);
                 holder.tanggal = (TextView)view.findViewById(R.id.berita_txt_item_tgl);

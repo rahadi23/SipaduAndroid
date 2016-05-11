@@ -30,7 +30,7 @@ public class DateTab extends LinearLayout {
         super(context, attrs);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.datetab, this, true);
+        inflater.inflate(R.layout.home_datetab, this, true);
 
         jadwal = new int[5][4];
         for (int i = 0; i < ArrayContainer.konten_jadwal.length; i++) {

@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tint_head"/>
             <include
-                layout="@layout/konten_home"
+                layout="@layout/home_content"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:id="@+id/konten_home"
@@ -61,7 +61,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
-        layout="@layout/head_home"
+        layout="@layout/home_head"
         android:id="@+id/head_home"
         android:layout_height="@dimen/parallax_item"
         android:layout_width="match_parent"/>

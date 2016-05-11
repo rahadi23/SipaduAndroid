@@ -7,6 +7,7 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_berita">BERITA</string>
     <string name="title_activity_splashscreen">splashscreen</string>
+    <string name="title_activity_absensi">ABSENSI</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -15,4 +16,7 @@
     <string name="kelas">Kelas</string>
     <string name="welcome">Welcome !</string>
     <string name="berita">BERITA</string>
+    <string name="absensi_activity_name">ABSENSI</string>
+    <string name="absensi_layouter_name">isfann</string>
+    <string name="percent">%</string>
 </resources>

@@ -67,7 +67,7 @@ public class NimFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_nim, container, false);
+        View view = inflater.inflate(R.layout.login_fragment_nim, container, false);
 
         TextInputLayout nim_support = (TextInputLayout)view.findViewById(R.id.nim_support);
         nim_support.setHintAnimationEnabled(true);

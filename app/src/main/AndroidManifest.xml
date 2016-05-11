@@ -35,6 +35,8 @@
         <activity
             android:name=".activities.NilaiActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.AbsensiActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

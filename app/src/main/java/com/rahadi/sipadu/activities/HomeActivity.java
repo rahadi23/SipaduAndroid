@@ -169,6 +169,14 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
             }
         });
 
+        buttons[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, AbsensiActivity.class);
+                startActivity(i);
+            }
+        });
+
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

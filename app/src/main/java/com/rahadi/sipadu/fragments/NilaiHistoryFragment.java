@@ -44,7 +44,7 @@ public class NilaiHistoryFragment extends Fragment implements AdapterView.OnItem
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_nilai_history, container, false);
+        View v = inflater.inflate(R.layout.nilai_fragment_nilai_history, container, false);
         setHasOptionsMenu(true);
         return v;
     }
@@ -69,7 +69,7 @@ public class NilaiHistoryFragment extends Fragment implements AdapterView.OnItem
             listsemester.add("Semester " + i);
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getBaseContext(),R.layout.custom_spinner_item, listsemester);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getBaseContext(),R.layout.nilai_spinner_item, listsemester);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
@@ -95,7 +95,7 @@ public class NilaiHistoryFragment extends Fragment implements AdapterView.OnItem
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
-                View info = getActivity().getLayoutInflater().inflate(R.layout.info_nilai, null);
+                View info = getActivity().getLayoutInflater().inflate(R.layout.nilai_info, null);
                 dialogBuilder.setView(info);
                 final AlertDialog info_nilai = dialogBuilder.create();
                 Button close = (Button)info.findViewById(R.id.info_btn);
