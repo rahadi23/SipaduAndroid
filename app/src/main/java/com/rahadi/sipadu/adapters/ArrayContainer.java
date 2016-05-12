@@ -148,7 +148,7 @@ public class ArrayContainer {
 
     public static String[][] konten_nilai_history1= new String[][] {
             {"Pengantar Demografi","Dosen Demografi","A"},
-            {"Kalkulus","Dosen Kalkulus","A-"},
+            {"Kalkulus","Dosen Kalkulus","C+"},
             {"Metode Statistika I","Dosen Metode Statistika I","B"},
             {"Agama","Dosen Agama","B+"},
             {"PTI","Dosen PTI","A-"},
@@ -170,7 +170,7 @@ public class ArrayContainer {
     public static String[][] konten_nilai_history3 = new String[][] {
             {"Metode Statistik II","Dosen Metstat","B"},
             {"Struktur Data","Dosen Strukdat","A-"},
-            {"Statistika Matematika","Dosen Statmat","A+"},
+            {"Statistika Matematika","Dosen Statmat","B+"},
             {"Basis Data","Dosen Basdat","B+"},
             {"Pendidikan Kewarganegaraan","Dosen PKN","A-"},
             {"Matematika Diskrit","Dosen Matdis","A"}
