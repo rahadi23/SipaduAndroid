@@ -32,18 +32,17 @@ import com.rahadi.sipadu.adapters.ArrayContainer;
 import com.rahadi.sipadu.adapters.Berita;
 import com.rahadi.sipadu.adapters.Jadwal;
 import com.rahadi.sipadu.gettersetters.BeritaGetsetter;
-import com.rahadi.sipadu.gettersetters.JadwalOverviewGetsetter;
+import com.rahadi.sipadu.gettersetters.JadwalGetsetter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
 
     private ListView jadwal_overview, berita_overview;
-    private ArrayList<JadwalOverviewGetsetter> jadwal_overview_array;
+    private ArrayList<JadwalGetsetter> jadwal_overview_array;
     private ArrayList<BeritaGetsetter> berita_overview_array;
     private ObservableScrollView mScrollView;
     private int parallaxHeight;
@@ -90,15 +89,15 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         jadwal_overview = (ListView)findViewById(R.id.list_jadwal_overview);
         jadwal_overview_array = new ArrayList<>();
 
-        JadwalOverviewGetsetter jadwal = null;
+        JadwalGetsetter jadwal = null;
 
         Calendar calendar = Calendar.getInstance();
         int today  = calendar.get(Calendar.DAY_OF_WEEK);
 
         if(today > 1 && today < 7) {
-            today = today-2;
+            today -= 2;
             for (int j = 0; j < ArrayContainer.konten_jadwal[today].length; j++) {
-                jadwal = new JadwalOverviewGetsetter();
+                jadwal = new JadwalGetsetter();
                 jadwal.setSesi(ArrayContainer.konten_jadwal[today][j][0]);
                 jadwal.setMatkul(ArrayContainer.konten_jadwal[today][j][1]);
                 jadwal.setDosen(ArrayContainer.konten_jadwal[today][j][2]);
@@ -166,6 +165,15 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
                 Intent intent = new Intent(HomeActivity.this, BeritaDetailActivity.class);
                 intent.putExtra(BeritaDetailActivity.KEY_ITEM, mbl);
                 startActivityForResult(intent, 0);
+            }
+        });
+
+        CardView jadwalOverview = (CardView)findViewById(R.id.card_view_jadwal_overview);
+        jadwalOverview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, JadwalActivity.class);
+                startActivity(i);
             }
         });
 
@@ -346,8 +354,9 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
 
     public String getToday(String usage) {
         String day, month, tanggal;
-        Date date = new Date();
         Calendar calendar = Calendar.getInstance();
+
+        tanggal = null;
 
         if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
             day = "Senin";
@@ -396,8 +405,7 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         }
         if(usage.equals("JADWAL_OVERVIEW")) {
             tanggal = day + ", " + calendar.get(Calendar.DAY_OF_MONTH) + " " + month + " " + calendar.get(Calendar.YEAR);
-            return tanggal;
         }
-        return "";
+        return tanggal;
     }
 }

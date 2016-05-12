@@ -3,7 +3,7 @@ package com.rahadi.sipadu.gettersetters;
 /**
  * Created by Rahadi on 10/04/2016.
  */
-public class JadwalOverviewGetsetter {
+public class JadwalGetsetter {
     public String getSesi() {
         return sesi;
     }

@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.rahadi.sipadu.R;
-import com.rahadi.sipadu.gettersetters.JadwalOverviewGetsetter;
+import com.rahadi.sipadu.gettersetters.JadwalGetsetter;
 
 import java.util.ArrayList;
 
@@ -19,9 +19,9 @@ import java.util.ArrayList;
 public class Jadwal extends BaseAdapter {
 
     Activity activity;
-    ArrayList<JadwalOverviewGetsetter> listItem;
+    ArrayList<JadwalGetsetter> listItem;
 
-    public Jadwal(Activity activity, ArrayList<JadwalOverviewGetsetter> listItem){
+    public Jadwal(Activity activity, ArrayList<JadwalGetsetter> listItem){
         this.activity = activity;
         this.listItem = listItem;
     }
@@ -49,11 +49,19 @@ public class Jadwal extends BaseAdapter {
         if(view == null) {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.jadwal_overview_list, null);
-            holder.sesi = (TextView)view.findViewById(R.id.nomor_sesi);
-            holder.matkul = (TextView)view.findViewById(R.id.mata_kuliah);
-            holder.dosen = (TextView)view.findViewById(R.id.nama_dosen);
-            holder.ruang = (TextView)view.findViewById(R.id.ruang_kelas);
+            if(activity.getClass().getSimpleName().equals("HomeActivity")) {
+                view = inflater.inflate(R.layout.jadwal_overview_list, null);
+                holder.sesi = (TextView) view.findViewById(R.id.nomor_sesi);
+                holder.matkul = (TextView) view.findViewById(R.id.mata_kuliah);
+                holder.dosen = (TextView) view.findViewById(R.id.nama_dosen);
+                holder.ruang = (TextView) view.findViewById(R.id.ruang_kelas);
+            } else if(activity.getClass().getSimpleName().equals("JadwalActivity")) {
+                view = inflater.inflate(R.layout.jadwal_list, null);
+                holder.sesi = (TextView) view.findViewById(R.id.nomor_sesi_jadwal);
+                holder.matkul = (TextView) view.findViewById(R.id.mata_kuliah_jadwal);
+                holder.dosen = (TextView) view.findViewById(R.id.nama_dosen_jadwal);
+                holder.ruang = (TextView) view.findViewById(R.id.ruang_kelas_jadwal);
+            }
 
 //            holder.matkul.setSelected(true);
             view.setTag(holder);
@@ -61,7 +69,7 @@ public class Jadwal extends BaseAdapter {
             holder = (ViewHolder)view.getTag();
         }
 
-        JadwalOverviewGetsetter getset = (JadwalOverviewGetsetter)getItem(position);
+        JadwalGetsetter getset = (JadwalGetsetter)getItem(position);
         holder.sesi.setText(getset.getSesi());
         holder.matkul.setText(getset.getMatkul());
         holder.dosen.setText(getset.getDosen());

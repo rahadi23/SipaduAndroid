@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dosen"
-            android:textColor="#ff4d4d4d"
+            android:textColor="@color/colorSecondary"
             android:ellipsize="end"
             android:singleLine="true"
             android:textSize="13dp"

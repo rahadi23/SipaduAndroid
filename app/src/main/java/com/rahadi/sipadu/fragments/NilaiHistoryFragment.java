@@ -44,7 +44,7 @@ public class NilaiHistoryFragment extends Fragment implements AdapterView.OnItem
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.nilai_fragment_nilai_history, container, false);
+        View v = inflater.inflate(R.layout.fragment_nilai_history, container, false);
         setHasOptionsMenu(true);
         return v;
     }

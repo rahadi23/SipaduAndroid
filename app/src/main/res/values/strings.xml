@@ -8,6 +8,7 @@
     <string name="title_activity_berita">BERITA</string>
     <string name="title_activity_splashscreen">splashscreen</string>
     <string name="title_activity_absensi">ABSENSI</string>
+    <string name="title_activity_jadwal">JADWAL</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
