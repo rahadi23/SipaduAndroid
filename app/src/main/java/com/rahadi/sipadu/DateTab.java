@@ -12,6 +12,7 @@ import com.rahadi.sipadu.adapters.ArrayContainer;
 import com.rahadi.sipadu.gettersetters.DateTabGetsetter;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Rahadi on 05/05/2016.
@@ -61,7 +62,9 @@ public class DateTab extends LinearLayout {
         in[4] = findViewById(R.id.indi_5);
 
         konten = new DateTabGetsetter[5];
-        int todayno = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        c = Calendar.getInstance(Locale.US);
+        c.setFirstDayOfWeek(Calendar.SUNDAY);
+        int todayno = c.get(Calendar.DAY_OF_WEEK);
         ImageView[] s;
 
         if(todayno == 7 || todayno == 1) {
@@ -70,10 +73,7 @@ public class DateTab extends LinearLayout {
         }
 
         for(int i = 0; i < 5; i++) {
-            c = Calendar.getInstance();
-            c.setFirstDayOfWeek(Calendar.MONDAY);
             c.set(Calendar.DAY_OF_WEEK, (i + 2));
-
             konten[i] = new DateTabGetsetter();
             konten[i].setDate(c.getTime());
             konten[i].setSesi(jadwal[i]);
