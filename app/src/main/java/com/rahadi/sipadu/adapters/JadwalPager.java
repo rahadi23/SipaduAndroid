@@ -93,4 +93,5 @@ public class JadwalPager extends FragmentStatePagerAdapter {
         tanggal = day + ", " + calendar.get(Calendar.DAY_OF_MONTH) + " " + month + " " + calendar.get(Calendar.YEAR);
         return tanggal;
     }
+
 }

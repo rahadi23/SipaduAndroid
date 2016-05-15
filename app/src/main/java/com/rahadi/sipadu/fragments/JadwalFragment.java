@@ -1,15 +1,23 @@
 package com.rahadi.sipadu.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.PagerTabStrip;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rahadi.sipadu.R;
+import com.rahadi.sipadu.activities.JadwalActivity;
 import com.rahadi.sipadu.adapters.ArrayContainer;
 import com.rahadi.sipadu.adapters.Jadwal;
 import com.rahadi.sipadu.adapters.JadwalPager;
@@ -25,7 +33,6 @@ public class JadwalFragment extends Fragment {
     public ArrayList<JadwalGetsetter> listItem;
 
     public JadwalFragment() {
-
     }
 
     public static JadwalFragment newInstance(int page) {
@@ -34,6 +41,13 @@ public class JadwalFragment extends Fragment {
         args.putInt(ARG_PAGE_NUMBER, page);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        DatePickerFragment datePickerFragment = DatePickerFragment.getInstance();
+        datePickerFragment.resetPicker();
     }
 
     @Override
@@ -80,4 +94,5 @@ public class JadwalFragment extends Fragment {
 
         return root;
     }
+
 }
