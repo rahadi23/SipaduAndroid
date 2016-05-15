@@ -116,6 +116,7 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
         } else {
             emptyView = findViewById(R.id.jadwal_empty_weekday);
         }
+        emptyView.setVisibility(View.VISIBLE);
         jadwal_overview.setEmptyView(emptyView);
 
         berita_overview = (ListView)findViewById(R.id.list_berita_overview);
@@ -165,6 +166,14 @@ public class HomeActivity extends AppCompatActivity implements ObservableScrollV
                 Intent intent = new Intent(HomeActivity.this, BeritaDetailActivity.class);
                 intent.putExtra(BeritaDetailActivity.KEY_ITEM, mbl);
                 startActivityForResult(intent, 0);
+            }
+        });
+
+        jadwal_overview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(HomeActivity.this, JadwalActivity.class);
+                startActivity(i);
             }
         });
 
